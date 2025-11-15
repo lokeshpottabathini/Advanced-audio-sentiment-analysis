@@ -1,0 +1,73 @@
+# # Core LangGraph and LangChain
+# langgraph>=0.2.0
+# langchain>=0.3.0
+# langsmith>=0.2.0
+
+# # Streamlit and UI
+# streamlit>=1.28.0
+# plotly>=5.17.0
+
+# # Audio Processing (librosa handles most formats without FFmpeg)
+# librosa>=0.10.0
+# soundfile>=0.12.0
+# # pydub>=0.25.0  # REMOVED - causes FFmpeg dependency
+
+# # ML Models and NLP
+# transformers>=4.35.0
+# torch>=2.0.0
+# vadersentiment>=3.3.2
+
+# # Data Processing
+# numpy>=1.24.0
+# pandas>=2.1.0
+
+# # Environment and Utilities
+# python-dotenv>=1.0.0
+# requests>=2.31.0
+
+# # Audio transcription
+# openai-whisper>=20231117
+
+
+# Core LangGraph and LangChain
+langgraph>=0.2.0
+langchain>=0.3.0
+langsmith>=0.2.0
+
+# Core Audio Processing
+openai-whisper>=20231117
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Streamlit and UI
+streamlit>=1.28.0
+plotly>=5.17.0
+pandas>=2.1.0
+
+# ML Models and NLP
+transformers>=4.35.0
+torch>=2.0.0
+vadersentiment>=3.3.2
+
+# Data Processing
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Audio format support
+ffmpeg-python>=0.2.0
+
+# Environment and Utilities
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Additional dependencies
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional: For advanced audio processing
+pydub>=0.25.0
+speechrecognition>=3.10.0
+
+# Performance optimization
+numba>=0.58.0

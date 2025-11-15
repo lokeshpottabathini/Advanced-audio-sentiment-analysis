@@ -1,0 +1,646 @@
+# .gitignore - Enhanced LangChain Audio Sentiment Analysis Project
+# Comprehensive gitignore for production-ready LangChain project with ChromaDB and Voice Input
+
+# ============================================================================
+# 1. ENVIRONMENT & CONFIGURATION FILES
+# ============================================================================
+
+# Environment variables (SENSITIVE - API KEYS, PASSWORDS)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.staging
+.env.test
+
+# Environment variable examples (safe to commit)
+# .env.example is safe to commit
+
+# Configuration files with secrets
+config.secret.py
+secrets.json
+secrets.yaml
+config/secrets/
+.secrets/
+
+# ============================================================================
+# 2. API KEYS & CREDENTIALS (CRITICAL - NEVER COMMIT)
+# ============================================================================
+
+# LangSmith API keys
+langsmith_api_key.txt
+langsmith_token.txt
+
+# OpenAI/Whisper API keys
+openai_api_key.txt
+whisper_api_key.txt
+
+# Database credentials
+db_credentials.txt
+postgres_password.txt
+mongodb_connection.txt
+
+# AWS credentials
+.aws/credentials
+.aws/config
+aws_access_key_id.txt
+aws_secret_access_key.txt
+
+# Google Cloud credentials
+.google/
+google_credentials.json
+gcp_service_account.json
+
+# Hugging Face tokens
+huggingface_token.txt
+hf_token.txt
+
+# Redis credentials
+redis_password.txt
+
+# ============================================================================
+# 3. PYTHON SPECIFIC
+# ============================================================================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+.env_*
+virtualenv/
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+.pip/
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Poetry
+poetry.lock
+.poetry-lock
+
+# Pipenv
+Pipfile.lock
+.pipenv/
+
+# Conda
+conda_env/
+.conda/
+
+# PyCharm/IDE virtual envs
+.idea/venv
+.vscode/venv
+
+# ============================================================================
+# 4. IDE & EDITOR FILES
+# ============================================================================
+
+# PyCharm / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+*.code-workspace
+.vscode_history/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+.vim/
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Nano
+.nano_history
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# ============================================================================
+# 5. IDE SPECIFIC DIRECTORIES
+# ============================================================================
+
+.idea/
+.vscode/
+.DS_Store
+.project
+.pydevproject
+.settings/
+
+# ============================================================================
+# 6. TESTING & COVERAGE
+# ============================================================================
+
+# pytest
+.pytest_cache/
+.tox/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# unittest
+test_results.xml
+test_*.xml
+
+# coverage
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# ============================================================================
+# 7. JUPYTER NOTEBOOKS
+# ============================================================================
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+.jupyter/
+
+# JupyterLab
+.jupyterlab/
+
+# ============================================================================
+# 8. DATA FILES (LOCAL DEVELOPMENT)
+# ============================================================================
+
+# Audio files (large, shouldn't be in repo)
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.aac
+*.ogg
+*.webm
+audio_files/
+*.audio
+voice_recordings/
+
+# Database files (local development)
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+database.sqlite
+local.db
+test.db
+
+# ChromaDB local persistence
+data/chromadb/
+chroma_data/
+.chromadb/
+
+# Vector store files
+data/vector_store/
+faiss_index/
+*.index
+
+# Processed data
+data/processed/
+data/interim/
+processed_data/
+
+# Raw data (large)
+data/raw/
+raw_data/
+uploads/
+
+# Temporary data files
+temp_data/
+tmp_data/
+*.tmp
+
+# ============================================================================
+# 9. LOGS & MONITORING
+# ============================================================================
+
+# Logging
+logs/
+*.log
+*.log.*
+log.txt
+app.log
+error.log
+debug.log
+
+# LangSmith logs
+langsmith_logs/
+langsmith_trace_logs/
+
+# Streamlit logs
+.streamlit/logs/
+
+# ============================================================================
+# 10. TEMPORARY & BUILD FILES
+# ============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+.tmp/
+
+# Build artifacts
+build/
+dist/
+*.whl
+*.egg-info/
+*.tar.gz
+*.zip
+
+# Node modules (if using any Node tools)
+node_modules/
+npm-debug.log
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# ============================================================================
+# 11. STREAMLIT SPECIFIC
+# ============================================================================
+
+# Streamlit cache
+.streamlit/
+.streamlit/cache/
+.streamlit/secrets.toml
+
+# Streamlit session state (local only)
+.streamlit_cache/
+
+# ============================================================================
+# 12. LANGCHAIN & LANGGRAPH SPECIFIC
+# ============================================================================
+
+# LangGraph checkpoints (local SQLite)
+data/checkpoints/
+checkpoints.db
+langgraph_checkpoints/
+
+# LangChain cache
+.langchain_cache/
+langchain_cache/
+
+# LangSmith trace logs (local)
+.langsmith/
+langsmith_traces/
+
+# ============================================================================
+# 13. MODEL CACHE FILES (LARGE - Don't commit)
+# ============================================================================
+
+# Hugging Face model cache
+.cache/
+huggingface_cache/
+~/.cache/
+.transformer_cache/
+
+# Whisper models cache
+models/
+whisper_models/
+*.pt
+*.pth
+
+# Sentence Transformer models
+sentence_transformer_models/
+
+# Transformers cache
+transformers_cache/
+
+# PyTorch models
+torch_models/
+.pytorch/
+
+# ============================================================================
+# 14. DEPENDENCY & LOCK FILES (Optional - Discuss with team)
+# ============================================================================
+
+# Uncomment if you want to commit lock files (recommended for production)
+# poetry.lock
+# Pipfile.lock
+# requirements-lock.txt
+
+# ============================================================================
+# 15. OS & SYSTEM FILES
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.fuse_hidden*
+
+# ============================================================================
+# 16. DOCUMENTATION BUILD FILES
+# ============================================================================
+
+# Sphinx documentation
+docs/_build/
+docs/.build/
+site/
+
+# MkDocs documentation
+site/
+
+# pdoc
+pdoc/
+.pdoc/
+
+# ============================================================================
+# 17. PROJECT SPECIFIC - AUDIO SENTIMENT ANALYSIS
+# ============================================================================
+
+# Generated reports
+reports/
+*.pdf
+analysis_reports/
+
+# Exported results
+exports/
+export_results/
+*.csv
+*.json (in exports/)
+downloads/
+
+# Batch processing temporary files
+batch_temp/
+batch_processing_temp/
+
+# Audio upload directory (development)
+uploads/
+audio_uploads/
+temp_audio/
+
+# Voice recordings (local development)
+voice_recordings/
+recorded_audio/
+*.wav
+
+# Processed results
+results/
+analysis_results/
+
+# ============================================================================
+# 18. CI/CD & DEVOPS
+# ============================================================================
+
+# GitHub Actions
+.github/workflows/logs/
+.github/workflows/*.log
+
+# GitLab CI
+.gitlab-ci.yml.local
+
+# Jenkins
+.jenkins/
+jenkins_logs/
+
+# ============================================================================
+# 19. PERFORMANCE & PROFILING
+# ============================================================================
+
+# Python profiling
+*.prof
+prof_data/
+cProfile_output/
+
+# Memory profiling
+*.mem
+
+# ============================================================================
+# 20. BACKUP & ARCHIVE FILES
+# ============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.orig
+*.swp
+*~
+
+# Archive files (don't commit large archives)
+*.tar.gz
+*.tar.bz2
+*.zip
+*.rar
+*.7z
+
+# ============================================================================
+# 21. REDIS & CACHE SPECIFIC
+# ============================================================================
+
+# Redis files
+dump.rdb
+appendonly.aof
+
+# Redis cache
+redis_cache/
+
+# ============================================================================
+# 22. MONITORING & ANALYTICS
+# ============================================================================
+
+# Prometheus metrics (local)
+prometheus_data/
+*.prom
+
+# Grafana
+grafana_data/
+
+# ============================================================================
+# 23. SECURITY - NEVER COMMIT
+# ============================================================================
+
+# Private keys
+*.pem
+*.key
+*.pub
+id_rsa
+id_dsa
+*.p8
+
+# SSL/TLS certificates (development)
+*.crt
+*.csr
+*.cert
+*.cer
+
+# ============================================================================
+# 24. KUBERNETES & CONTAINER SPECIFIC
+# ============================================================================
+
+# Kubernetes manifests with secrets (local overrides)
+k8s/secrets/
+kubernetes/secrets/
+
+# Docker secrets
+.dockersecrets/
+
+# ============================================================================
+# 25. DEVELOPMENT NOTES & SCRATCH FILES
+# ============================================================================
+
+# Scratch files (developers' personal notes)
+scratch.py
+playground.py
+test_scratch.py
+notes.txt
+TODO.md
+
+# Debugging sessions
+debug_session.txt
+debug.py
+
+# ============================================================================
+# 26. VSCODE EXTENSIONS & SETTINGS
+# ============================================================================
+
+# VSCode user-specific settings (keep workspace settings, ignore user settings)
+.vscode/settings.json (if contains secrets)
+.vscode/launch.json
+.vscode/tasks.json
+
+# ============================================================================
+# 27. COMMITIZEN & VERSIONING
+# ============================================================================
+
+.cz.json
+.version
+
+# ============================================================================
+# 28. PACKAGE MANAGER CACHE
+# ============================================================================
+
+# pip cache
+*.pyc
+*.egg
+
+# ============================================================================
+# 29. BINARY FILES & EXECUTABLES
+# ============================================================================
+
+# Compiled binaries
+*.so
+*.o
+*.a
+*.lib
+*.dll
+*.exe
+
+# ============================================================================
+# 30. COMMENTS FOR SAFE FILES (DO NOT IGNORE)
+# ============================================================================
+
+# Safe to commit:
+# ✅ requirements.txt
+# ✅ requirements_enhanced.txt
+# ✅ .gitignore (this file)
+# ✅ .env.example (NO real secrets)
+# ✅ README.md
+# ✅ docker-compose.yml (without secrets)
+# ✅ Dockerfile
+# ✅ kubernetes manifests (without secrets)
+# ✅ Source code (.py files)
+# ✅ Configuration templates
+# ✅ GitHub Actions workflows
+
+# ============================================================================
+# EXCEPTIONS - Files/Directories TO KEEP IN REPO
+# ============================================================================
+
+# Negate rules - these SHOULD be committed
+
+!.env.example
+!.env.example.development
+!.env.example.production
+
+!.github/
+!.github/workflows/
+!.github/ISSUE_TEMPLATE/
+!.github/PULL_REQUEST_TEMPLATE/
+
+!.gitignore
+!.gitattributes
+
+!docs/
+!docs/**
+
+!tests/
+!tests/**
+!test_requirements.txt
+
+!config/
+!config/templates/
+!config/**/*.example.py
+
+!.pre-commit-config.yaml
+!.pylintrc
+!pyproject.toml
+!setup.py
+!setup.cfg
+
+!docker/
+!docker/**
+
+!kubernetes/
+!kubernetes/**
+
+!scripts/
+!scripts/**
+
+
